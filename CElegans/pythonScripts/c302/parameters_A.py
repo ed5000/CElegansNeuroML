@@ -40,14 +40,14 @@ chem_inh_syn_erev =        BioParameter("chem_inh_syn_erev", "-80mV", "BlindGues
 chem_inh_syn_rise =        BioParameter("chem_inh_syn_rise", "3ms", "BlindGuess", "0.1")
 chem_inh_syn_decay =       BioParameter("chem_inh_syn_decay", "10ms", "BlindGuess", "0.1")
 
-elec_syn_gbase =       BioParameter("elec_syn_gbase", "0.2nS", "BlindGuess", "0.1")
+elec_syn_gbase =       BioParameter("elec_syn_gbase", "0nS", "BlindGuess", "0.1")
 elec_syn_erev =        BioParameter("elec_syn_erev", "0mV", "BlindGuess", "0.1")
 elec_syn_rise =        BioParameter("elec_syn_rise", "3ms", "BlindGuess", "0.1")
 elec_syn_decay =       BioParameter("elec_syn_decay", "10ms", "BlindGuess", "0.1")
 
 
-unphysiological_offset_current = BioParameter("unphysiological_offset_current", "0.21nA", "KnownError", "0")
-unphysiological_offset_current_dur = BioParameter("unphysiological_offset_current_dur", "200ms", "KnownError", "0")
+unphysiological_offset_current = BioParameter("unphysiological_offset_current", "0.9nA", "KnownError", "0")
+unphysiological_offset_current_dur = BioParameter("unphysiological_offset_current_dur", "1000ms", "KnownError", "0")
 
 
 generic_cell = IafCell(id="generic_iaf_cell", 
@@ -63,7 +63,7 @@ exc_syn = ExpTwoSynapse(id="exc_syn",
                         erev =          chem_exc_syn_erev.value,
                         tau_decay =     chem_exc_syn_decay.value,
                         tau_rise =      chem_exc_syn_rise.value)
-    
+
 
 inh_syn = ExpTwoSynapse(id="inh_syn",
                         gbase =         chem_inh_syn_gbase.value,
